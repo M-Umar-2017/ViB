@@ -1,0 +1,41 @@
+{
+  "name": "vib-browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ViB — a keyboard-driven desktop web browser",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:linux": "electron .",
+    "pack:linux": "electron-builder --linux AppImage --x64",
+    "pack:linux:arm64": "electron-builder --linux AppImage --arm64",
+    "pack:win": "electron-builder --win zip --x64",
+    "pack:win:arm64": "electron-builder --win zip --arm64",
+    "check": "node --check main.js && node --check preload.js && node --check page-preload.js && node --check ui/app.js"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "dev.vib.browser",
+    "productName": "ViB",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "page-preload.js",
+      "ui/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Network;WebBrowser;"
+    },
+    "win": {
+      "target": ["zip"]
+    }
+  }
+}

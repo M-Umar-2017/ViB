@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'self';">
+  <title>ViB</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="chrome" id="chrome">
+      <div class="tab-row">
+        <div id="tab-list" class="tab-list" role="tablist" aria-label="Open tabs"></div>
+        <button id="new-tab" class="icon-button new-tab" type="button" title="New tab (Ctrl+T)" aria-label="New tab">+</button>
+      </div>
+      <div class="toolbar">
+        <div class="nav-buttons">
+          <button id="back" class="icon-button" type="button" title="Back (h)" aria-label="Back"><span class="glyph">‹</span></button>
+          <button id="forward" class="icon-button" type="button" title="Forward (l)" aria-label="Forward"><span class="glyph">›</span></button>
+          <button id="reload" class="icon-button" type="button" title="Reload (r)" aria-label="Reload"><span class="reload-glyph">↻</span></button>
+        </div>
+        <div class="address-wrap">
+          <span id="security-mark" class="security-mark" aria-hidden="true">○</span>
+          <input id="address" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Search or enter address" aria-label="Search or enter address">
+          <button id="bookmark" class="address-action" type="button" title="Bookmark this page" aria-label="Bookmark this page">☆</button>
+        </div>
+        <button id="private-tab" class="icon-button utility-button" type="button" title="New private tab" aria-label="New private tab"><span class="utility-label">Private</span></button>
+        <button id="history" class="icon-button utility-button" type="button" title="History" aria-label="History"><span class="utility-label">History</span></button>
+        <button id="bookmarks" class="icon-button utility-button" type="button" title="Bookmarks" aria-label="Bookmarks"><span class="utility-label">Saved</span></button>
+        <button id="downloads" class="icon-button utility-button" type="button" title="Downloads" aria-label="Downloads"><span class="utility-label">Downloads</span></button>
+        <button id="menu" class="icon-button menu-button" type="button" title="More" aria-label="More options"><span class="menu-dots">···</span></button>
+      </div>
+    </header>
+    <main id="web-area" class="web-area" aria-label="Web page"></main>
+    <div id="command-row" class="command-row" hidden>
+      <span id="command-prefix" class="command-prefix">:</span>
+      <input id="command-input" type="text" autocomplete="off" spellcheck="false" aria-label="Browser command">
+      <span id="command-hint" class="command-hint"></span>
+    </div>
+    <footer class="status-bar">
+      <div class="status-left">
+        <span id="mode-badge" class="mode-badge">NORMAL</span>
+        <span id="status-message" class="status-message">Ready</span>
+      </div>
+      <div class="status-right">
+        <span id="page-label" class="page-label">New tab</span>
+        <span id="zoom-label" class="zoom-label">100%</span>
+      </div>
+    </footer>
+  </div>
+  <section id="panel" class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" hidden>
+    <div class="panel-card">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">ViB browser</p>
+          <h1 id="panel-title">Panel</h1>
+        </div>
+        <button id="panel-close" class="icon-button close-button" type="button" aria-label="Close panel">×</button>
+      </div>
+      <div id="panel-body" class="panel-body"></div>
+    </div>
+  </section>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

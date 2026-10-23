@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; form-action https://duckduckgo.com; base-uri 'none';">
+  <title>New tab</title>
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <main class="start-page">
+    <div class="start-content">
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="brand-name">ViB</p>
+      <h1>Where to?</h1>
+      <form class="search-form" action="https://duckduckgo.com/" method="get">
+        <label class="search-symbol" for="start-search" aria-hidden="true">⌕</label>
+        <input id="start-search" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search the web or enter an address" aria-label="Search the web">
+        <button type="submit" aria-label="Search">↵</button>
+      </form>
+      <p class="start-hint">Use <kbd>o</kbd> to search from anywhere, or type here.</p>
+    </div>
+    <div class="bottom-hint"><span>Vim-inspired navigation</span><span><kbd>?</kbd> for shortcuts</span></div>
+  </main>
+</body>
+</html>
