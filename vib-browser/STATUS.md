@@ -2,7 +2,7 @@
 
 ## Repository and architecture
 
-The upstream `vim/vim` repository is cloned locally at `/home/ubuntu/ViB`. ViB's app source is in `vib-browser/`; the existing Vim editor has not been turned into the browser UI. Electron provides the desktop window and bundled Chromium renders pages. The user authorized creating a private GitHub repository named `ViB` and publishing the source and release assets; no public repository is intended.
+The source is in the private GitHub repository [M-Umar-2017/ViB](https://github.com/M-Umar-2017/ViB). It was pushed on branch `ViB`, which is also the default branch. The upstream `vim/vim` repository remains the local source starting point; the existing Vim editor has not been turned into the browser UI. Electron provides the desktop window and bundled Chromium renders pages.
 
 ## Working foundation
 
@@ -10,8 +10,8 @@ The Linux-first GUI has a tab strip, address/search bar, back/forward/reload, bo
 
 ## Verification and packages
 
-`npm install` completed and `npm run check` passed for the Electron main process, both preloads, and the UI code. Electron launched under Xvfb with Chromium's sandbox enabled. DevTools smoke tests confirmed browser chrome rendering, tab/private-tab creation, panel toggling, and keyboard focus of the address field. Linux x64 and ARM64 AppImages were generated locally. A Windows ARM64 ZIP was also generated; the NSIS installer attempt failed on this Linux ARM64 host, so portable ZIPs are the current Windows package format. Windows x64 packaging and target-platform testing remain pending. These are early development assets, not a security-audited browser release.
+`npm install` completed and `npm run check` passed for the Electron main process, both preloads, and the UI code. Electron launched under Xvfb with Chromium's sandbox enabled. DevTools smoke tests confirmed browser chrome rendering, tab/private-tab creation, panel toggling, and address-field shortcut behavior. Linux x64 and ARM64 AppImages and Windows x64 and ARM64 portable ZIPs were uploaded to the private [ViB 0.1.0 Alpha 1 prerelease](https://github.com/M-Umar-2017/ViB/releases/tag/v0.1.0-alpha.1), along with SHA-256 checksums. Windows ZIPs were cross-built on Linux and archive-integrity checked, but no Windows runtime test or installer is included. These are early development assets, not a security-audited browser release.
 
 ## Next work
 
-Complete the Windows x64 ZIP and functional checks on Windows, verify Linux packages in their target environments, and test page navigation, history, and downloads end-to-end. Continue focusing on browser essentials and avoid unrelated feature additions.
+Verify the Linux packages in their target environments and the Windows ZIPs on Windows, then test page navigation, history, and downloads end-to-end. Continue focusing on browser essentials and avoid unrelated feature additions.

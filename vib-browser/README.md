@@ -2,9 +2,9 @@
 
 ViB is a browser-first desktop application with Vim-inspired keyboard navigation. Its visible surface is browser chrome—tabs, address/search, page controls, bookmarks, history, downloads, and browser settings—not a text editor. Chromium, bundled through Electron, renders sites. The upstream Vim checkout is the requested local source starting point; the browser engine is separate because Vim does not render modern web pages.
 
-## Repository status
+## Repository and release
 
-The upstream `vim/vim` source is cloned locally at `/home/ubuntu/ViB`; the browser application lives under `vib-browser/`. The clone's push URL is disabled in local Git configuration. The ViB GitHub repository is intended to be private.
+The source is in the private repository [M-Umar-2017/ViB](https://github.com/M-Umar-2017/ViB), on the `ViB` default branch. The initial alpha packages are available in the [ViB 0.1.0 Alpha 1 prerelease](https://github.com/M-Umar-2017/ViB/releases/tag/v0.1.0-alpha.1). The upstream Vim checkout remains local as the source starting point; its push URL stays disabled.
 
 ## Run from source
 
@@ -27,7 +27,7 @@ npm run pack:win            # Windows x64 ZIP
 npm run pack:win:arm64      # Windows ARM64 ZIP
 ```
 
-Linux x64 and ARM64 AppImages have been generated. Windows ZIP targets are configured; they still require a functional check on Windows before being called verified. The Windows NSIS installer target is not included in this prototype build.
+Linux x64 and ARM64 AppImages and Windows x64 and ARM64 portable ZIPs are attached to the alpha release. The Windows ZIPs were cross-built and archive-integrity checked but require functional checks on Windows. The Windows NSIS installer target is not included in this prototype build.
 
 ## Working prototype scope
 
